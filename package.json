@@ -34,7 +34,7 @@
 
 		]
 	},
-	"dependencies": {
+	"devDependencies": {
 		"@vscode/vsce": "^3.2.0"
 	}
 }
