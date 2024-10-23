@@ -4,6 +4,10 @@
 	"displayName": "YAML String Highlight",
 	"description": "Provide other language's syntax highlight in YAML string. For people who put YAML, JSON and Go template in yaml string.",
 	"publisher": "leonw774",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/leonw774/yaml-string-highlight.git"
+	},
 	"license": "MIT",
 	"engines": {
 		"vscode": "^1.22.0"
