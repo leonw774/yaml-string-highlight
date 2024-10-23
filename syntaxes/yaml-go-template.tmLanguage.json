@@ -1,0 +1,42 @@
+{
+	"scopeName": "meta.go-template.yaml",
+	"fileTypes": [
+		"yaml"
+	],
+	"injectionSelector": "L:string.unquoted.block.yaml, L:string.unquoted.plain.out.yaml, L:string.quoted.double.yaml, L:string.quoted.single.yaml",
+	"injections": {
+		"L:source": {
+			"patterns": [
+				{
+				"match": "<",
+				"name": "invalid.illegal.bad-angle-bracket.html"
+				}
+			]
+		}
+	},
+	"patterns": [
+		{
+			"begin": "\\{\\{-?[\\t ]*",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.section.embedded.begin.go-template"
+				}
+			},
+			"end": "[\\t ]*-?\\}\\}",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.section.embedded.end.go-template"
+				},
+				"1": {
+					"name": "source.go-template"
+				}
+			},
+			"patterns": [
+				{
+					"name": "meta.embedded.go-template",
+					"include": "source.go-template"
+				}
+			]
+		}
+	]
+}

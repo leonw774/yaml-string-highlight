@@ -1,0 +1,27 @@
+foo: 123
+bar:
+  one: qwerty
+  two: "the value is {{ $value }}"
+  three: 3
+mlml.yaml: |+
+  lll: wow! its {{ .go_template.in_block_string.in_yaml }}!
+  mmm:
+    aaa: 0
+    yyy: 1
+onon.json: >
+  {
+    "yo": "hi",
+    "haha": [
+      "777",
+      "666"
+    ],
+    "content": "{{ .content.text }}"
+  }
+ptpt.js: |-
+  var test = "a string", tn = 10;
+  for (let i = 0; i < n; i += 1) {
+    console.log("Hello world!");
+  }
+config.ini: |
+  protocol=http
+  name=my-page

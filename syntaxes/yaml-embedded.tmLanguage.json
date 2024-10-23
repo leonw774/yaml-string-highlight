@@ -1,0 +1,194 @@
+{
+	"scopeName": "meta.unquoted.block.embedded.yaml",
+	"fileTypes": [
+		"yaml"
+	],
+	"injectionSelector": "L:source.yaml",
+	"injections": {
+		"L:source": {
+			"patterns": [
+				{
+				"match": "<",
+				"name": "invalid.illegal.bad-angle-bracket.html"
+				}
+			]
+		}
+	},
+	"patterns": [
+		{
+			"begin": "(?:\\.((yaml)|(yml)))(\\s*)(:)(\\s*)((\\|)|(>))([1-9])?([-+])?(.*\\n?)",
+			"beginCaptures": {
+				"5": {
+					"name": "punctuation.separator.map.value.yaml"
+				},
+				"8": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"9": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"10": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"11": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"12": {
+					"patterns": [
+						{
+							"include": "#comment"
+						},
+						{
+							"match": ".+",
+							"name": "invalid.illegal.expected-comment-or-newline.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			]
+		},
+		{
+			"begin": "(?:\\.json)(\\s*)(:)(\\s*)((\\|)|(>))([1-9])?([-+])?(.*\\n?)",
+			"beginCaptures": {
+				"2": {
+					"name": "punctuation.separator.map.value.yaml"
+				},
+				"5": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"6": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"7": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"8": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"9": {
+					"patterns": [
+						{
+							"include": "#comment"
+						},
+						{
+							"match": ".+",
+							"name": "invalid.illegal.expected-comment-or-newline.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"name": "string.unquoted.block.yaml",
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"patterns": [
+						{
+							"include": "source.json"
+						}
+					]
+				}
+			]
+		},
+		{
+			"begin": "(?:\\.js)(\\s*)(:)(\\s*)((\\|)|(>))([1-9])?([-+])?(.*\\n?)",
+			"beginCaptures": {
+				"2": {
+					"name": "punctuation.separator.map.value.yaml"
+				},
+				"5": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"6": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"7": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"8": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"9": {
+					"patterns": [
+						{
+							"include": "#comment"
+						},
+						{
+							"match": ".+",
+							"name": "invalid.illegal.expected-comment-or-newline.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"name": "string.unquoted.block.yaml",
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"patterns": [
+						{
+							"include": "source.js"
+						}
+					]
+				}
+			]
+		},
+		{
+			"begin": "(?:\\.((ini)|(properties)|(conf)))(\\s*)(:)(\\s*)((\\|)|(>))([1-9])?([-+])?(.*\\n?)",
+			"beginCaptures": {
+				"6": {
+					"name": "punctuation.separator.map.value.yaml"
+				},
+				"9": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"10": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"11": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"12": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"13": {
+					"patterns": [
+						{
+							"include": "#comment"
+						},
+						{
+							"match": ".+",
+							"name": "invalid.illegal.expected-comment-or-newline.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"name": "string.unquoted.block.yaml",
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"patterns": [
+						{
+							"include": "source.ini"
+						}
+					]
+				}
+			]
+		}
+	]
+}
