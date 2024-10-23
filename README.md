@@ -1,6 +1,6 @@
 # yaml-string-highlight
 
-Provide syntax highlight of other language in YAML string. For people who put YAML, JSON and Go template in YAML string.
+Provide syntax highlight of other language in YAML string. For people who put YAML, JSON, Go template, and all other things in YAML string.
 
 ## Supported languages
 
