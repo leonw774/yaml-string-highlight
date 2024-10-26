@@ -16,7 +16,7 @@
 	},
 	"patterns": [
 		{
-			"begin": "(?:\\.((yaml)|(yml)))(\\s*)(:)(\\s*)((\\|)|(>))([1-9])?([-+])?(.*\\n?)",
+			"begin": "(?:\\.((yaml)|(yml)))([\t ]*)(:)([\t ]*)((\\|)|(>))([1-9])?([-+])?(.*\\n?)",
 			"beginCaptures": {
 				"5": {
 					"name": "punctuation.separator.map.value.yaml"
@@ -59,7 +59,7 @@
 			]
 		},
 		{
-			"begin": "(?:\\.json)(\\s*)(:)(\\s*)((\\|)|(>))([1-9])?([-+])?(.*\\n?)",
+			"begin": "(?:\\.json)([\t ]*)(:)([\t ]*)((\\|)|(>))([1-9])?([-+])?(.*\\n?)",
 			"beginCaptures": {
 				"2": {
 					"name": "punctuation.separator.map.value.yaml"
@@ -103,7 +103,7 @@
 			]
 		},
 		{
-			"begin": "(?:\\.js)(\\s*)(:)(\\s*)((\\|)|(>))([1-9])?([-+])?(.*\\n?)",
+			"begin": "(?:\\.js)([\t ]*)(:)([\t ]*)((\\|)|(>))([1-9])?([-+])?(.*\\n?)",
 			"beginCaptures": {
 				"2": {
 					"name": "punctuation.separator.map.value.yaml"
@@ -147,7 +147,7 @@
 			]
 		},
 		{
-			"begin": "(?:\\.((ini)|(properties)|(conf)))(\\s*)(:)(\\s*)((\\|)|(>))([1-9])?([-+])?(.*\\n?)",
+			"begin": "(?:\\.((ini)|(properties)|(conf)))([\t ]*)(:)([\t ]*)((\\|)|(>))([1-9])?([-+])?(.*\\n?)",
 			"beginCaptures": {
 				"6": {
 					"name": "punctuation.separator.map.value.yaml"

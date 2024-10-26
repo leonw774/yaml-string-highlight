@@ -26,9 +26,6 @@
 			"endCaptures": {
 				"0": {
 					"name": "punctuation.section.embedded.end.go-template"
-				},
-				"1": {
-					"name": "source.go-template"
 				}
 			},
 			"patterns": [

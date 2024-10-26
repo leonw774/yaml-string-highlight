@@ -30,8 +30,7 @@
 				"injectTo": [
 					"source.yaml"
 				]
-			}      
-
+			}
 		]
 	},
 	"devDependencies": {
