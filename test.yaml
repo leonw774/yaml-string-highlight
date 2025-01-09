@@ -1,14 +1,16 @@
+    # ========
 foo: 123
 bar:
   one: qwerty
   two: "the secret value is ${{ secret.value }}"
   three: 3
-mlml.yaml: |+
-  lll: wow! its {{ .go_template.in_unquoted_plain_stirng.in_block_string }}!
+qwqw.yaml: |+
+  # comment 1
+  nnn: wow! its {{ .go_template.in_unquoted_plain_stirng.in_block_string }}!
   mmm:
-    aaa: 0
-    yyy: 1
-onon.json: >
+    aaa: 0 # comment 2
+    bbb: 1
+asas.json: >
   {
     "yo": "hi",
     "haha": [
@@ -17,9 +19,9 @@ onon.json: >
     ],
     "content": "{{ .content.text }}"
   }
-ptpt.js: |-
-  var test = "a string", tn = 10;
-  for (let i = 0; i < n; i += 1) {
+zxzx.js: |-
+  var test = "a string", num = 10;
+  for (let i = 0; i < num; i += 1) {
     console.log(`Hello world! ${test}`);
   }
 config.ini: |

@@ -16,38 +16,14 @@
 	},
 	"patterns": [
 		{
-			"begin": "(?:\\.((yaml)|(yml)))([\t ]*)(:)([\t ]*)((\\|)|(>))([1-9])?([-+])?(.*\\n?)",
-			"beginCaptures": {
-				"5": {
-					"name": "punctuation.separator.map.value.yaml"
-				},
-				"8": {
-					"name": "keyword.control.flow.block-scalar.literal.yaml"
-				},
-				"9": {
-					"name": "keyword.control.flow.block-scalar.folded.yaml"
-				},
-				"10": {
-					"name": "constant.numeric.indentation-indicator.yaml"
-				},
-				"11": {
-					"name": "storage.modifier.chomping-indicator.yaml"
-				},
-				"12": {
-					"patterns": [
-						{
-							"include": "#comment"
-						},
-						{
-							"match": ".+",
-							"name": "invalid.illegal.expected-comment-or-newline.yaml"
-						}
-					]
-				}
-			},
+			"begin": "(?<=\\.ya?ml[\t ]*:[\t ]*(?:\\||>)[1-9]?[-+]?.*\\n?)",
 			"end": "^(?=\\S)|(?!\\G)",
 			"patterns": [
 				{
+					"include": "#comment"
+				},
+				{
+					"name": "meta.string.unquoted.block.yaml",
 					"begin": "^([ ]+)(?! )",
 					"end": "^(?!\\1|\\s*$)",
 					"patterns": [
@@ -59,39 +35,11 @@
 			]
 		},
 		{
-			"begin": "(?:\\.json)([\t ]*)(:)([\t ]*)((\\|)|(>))([1-9])?([-+])?(.*\\n?)",
-			"beginCaptures": {
-				"2": {
-					"name": "punctuation.separator.map.value.yaml"
-				},
-				"5": {
-					"name": "keyword.control.flow.block-scalar.literal.yaml"
-				},
-				"6": {
-					"name": "keyword.control.flow.block-scalar.folded.yaml"
-				},
-				"7": {
-					"name": "constant.numeric.indentation-indicator.yaml"
-				},
-				"8": {
-					"name": "storage.modifier.chomping-indicator.yaml"
-				},
-				"9": {
-					"patterns": [
-						{
-							"include": "#comment"
-						},
-						{
-							"match": ".+",
-							"name": "invalid.illegal.expected-comment-or-newline.yaml"
-						}
-					]
-				}
-			},
+			"begin": "(?<=\\.json[\t ]*:[\t ]*(?:\\||>)[1-9]?[-+]?.*\\n?)",
 			"end": "^(?=\\S)|(?!\\G)",
 			"patterns": [
 				{
-					"name": "string.unquoted.block.yaml",
+					"name": "meta.string.unquoted.block.yaml",
 					"begin": "^([ ]+)(?! )",
 					"end": "^(?!\\1|\\s*$)",
 					"patterns": [
@@ -103,39 +51,11 @@
 			]
 		},
 		{
-			"begin": "(?:\\.js)([\t ]*)(:)([\t ]*)((\\|)|(>))([1-9])?([-+])?(.*\\n?)",
-			"beginCaptures": {
-				"2": {
-					"name": "punctuation.separator.map.value.yaml"
-				},
-				"5": {
-					"name": "keyword.control.flow.block-scalar.literal.yaml"
-				},
-				"6": {
-					"name": "keyword.control.flow.block-scalar.folded.yaml"
-				},
-				"7": {
-					"name": "constant.numeric.indentation-indicator.yaml"
-				},
-				"8": {
-					"name": "storage.modifier.chomping-indicator.yaml"
-				},
-				"9": {
-					"patterns": [
-						{
-							"include": "#comment"
-						},
-						{
-							"match": ".+",
-							"name": "invalid.illegal.expected-comment-or-newline.yaml"
-						}
-					]
-				}
-			},
+			"begin": "(?<=\\.js[\t ]*:[\t ]*(?:\\||>)[1-9]?[-+]?.*\\n?)",
 			"end": "^(?=\\S)|(?!\\G)",
 			"patterns": [
 				{
-					"name": "string.unquoted.block.yaml",
+					"name": "meta.string.unquoted.block.yaml",
 					"begin": "^([ ]+)(?! )",
 					"end": "^(?!\\1|\\s*$)",
 					"patterns": [
@@ -147,39 +67,11 @@
 			]
 		},
 		{
-			"begin": "(?:\\.((ini)|(properties)|(conf)))([\t ]*)(:)([\t ]*)((\\|)|(>))([1-9])?([-+])?(.*\\n?)",
-			"beginCaptures": {
-				"6": {
-					"name": "punctuation.separator.map.value.yaml"
-				},
-				"9": {
-					"name": "keyword.control.flow.block-scalar.literal.yaml"
-				},
-				"10": {
-					"name": "keyword.control.flow.block-scalar.folded.yaml"
-				},
-				"11": {
-					"name": "constant.numeric.indentation-indicator.yaml"
-				},
-				"12": {
-					"name": "storage.modifier.chomping-indicator.yaml"
-				},
-				"13": {
-					"patterns": [
-						{
-							"include": "#comment"
-						},
-						{
-							"match": ".+",
-							"name": "invalid.illegal.expected-comment-or-newline.yaml"
-						}
-					]
-				}
-			},
+			"begin": "(?<=\\.(?:ini|properties|conf)[\t ]*:[\t ]*(?:\\||>)[1-9]?[-+]?.*\\n?)",
 			"end": "^(?=\\S)|(?!\\G)",
 			"patterns": [
 				{
-					"name": "string.unquoted.block.yaml",
+					"name": "meta.string.unquoted.block.yaml",
 					"begin": "^([ ]+)(?! )",
 					"end": "^(?!\\1|\\s*$)",
 					"patterns": [
@@ -190,5 +82,28 @@
 				}
 			]
 		}
-	]
+	],
+	"repository": {
+		"comment": {
+			"begin": "(?:(^[ \\t]*)|[ \\t]+)(?=#\\p{Print}*$)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.whitespace.comment.leading.yaml"
+				}
+			},
+			"end": "(?!\\G)",
+			"patterns": [
+				{
+					"begin": "#",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.yaml"
+						}
+					},
+					"end": "\\n",
+					"name": "comment.line.number-sign.yaml"
+				}
+			]
+		}
+	}
 }
